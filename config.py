@@ -19,12 +19,12 @@ THREAT_THRESHOLDS = {
 }
 
 # Geolocation Settings
-GEOIP_DATABASE_PATH = "data/geoip/GeoLite2-City.mmdb"
+GEOIP_DATABASE_PATH = "tmp/data/geoip/GeoLite2-City.mmdb"
 FALLBACK_GEOLOCATION_API = "<http://ip-api.com/json/>"
 
 # Logging Settings
 LOG_LEVEL = "INFO"
-LOG_FILE = "data/logs/network_analyzer.log"
+LOG_FILE = "tmp/data/logs/network_analyzer.log"
 
 # Color Scheme
 COLORS = {
