@@ -9,13 +9,13 @@ import json
 
 def setup_logging():
     """Setup logging configuration"""
-    os.makedirs("data/logs", exist_ok=True)
+    os.makedirs("/tmp/data/logs", exist_ok=True)
 
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler('data/logs/network_analyzer.log'),
+            logging.FileHandler('/tmp/data/logs/network_analyzer.log'),
             logging.StreamHandler()
         ]
     )
@@ -44,14 +44,14 @@ def get_network_interfaces():
 
 def save_packet_data(packets, filename):
     """Save packet data to JSON file"""
-    os.makedirs("data", exist_ok=True)
-    with open(f"data/{filename}", 'w') as f:
+    os.makedirs("/tmp/data", exist_ok=True)
+    with open(f"/tmp/data/{filename}", 'w') as f:
         json.dump(packets, f, default=str, indent=2)
 
 def load_packet_data(filename):
     """Load packet data from JSON file"""
     try:
-        with open(f"data/{filename}", 'r') as f:
+        with open(f"/tmp/data/{filename}", 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         return []
